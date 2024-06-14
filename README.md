@@ -1,6 +1,8 @@
 # Jarvis Voice Assistant Repository
 
 This repository contains a voice assistant named Jarvis, developed on .NET Framework 4.7. Jarvis utilizes the Speech Platform library for speech recognition and is designed specifically to operate in the Russian language environment. Additionally, the repository includes a configuration tool, allowing users to create custom commands for Jarvis.
+![Jarvis Screen](GARVIS/screen.png)
+
 
 ## Default Commands
 
@@ -50,9 +52,10 @@ To install and run Jarvis on your system, the following prerequisites are necess
 To set up Jarvis on your machine, follow these steps:
 
 1. **Install Dependencies**:
-   - Download and install the Microsoft Speech Platform SDK.
-   - Install the Microsoft Speech Platform Runtime.
-   - Install the Russian language pack for the Speech Platform.
+   - Download and install the Microsoft [Speech Platform SDKx64](https://download.microsoft.com/download/2/2/5/225F4CFA-8B54-41DB-98C1-47F5A300BBF6/x64_MicrosoftSpeechPlatformSDK.msi).
+   - Download and install the Microsoft [Speech Platform SDKx32](https://download.microsoft.com/download/2/2/5/225F4CFA-8B54-41DB-98C1-47F5A300BBF6/x86_MicrosoftSpeechPlatformSDK.msi).
+   - Install the Microsoft [Speech Platform Runtime](https://download.microsoft.com/download/A/6/4/A64012D6-D56F-4E58-85E3-531E56ABC0E6/x86_SpeechPlatformRuntime/SpeechPlatformRuntime.msi).
+   - Install the Russian language pack for the [Speech Platform](https://download.microsoft.com/download/4/0/D/40D6347A-AFA5-417D-A9BB-173D937BEED4/MSSpeech_SR_ru-RU_TELE.msi).
 
 2. **Build the Application**:
    - Clone the repository to your local machine.
