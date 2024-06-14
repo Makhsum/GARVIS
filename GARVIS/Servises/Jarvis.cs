@@ -15,13 +15,21 @@ using Microsoft.Speech.Recognition;
 using Newtonsoft.Json;
 using AddAction.Models;
 using Memory;
+using NAudio;
+
+
 using System.Runtime.InteropServices;
+using NAudio.Wave;
+using System.Numerics;
+using System.Security.Policy;
 
 namespace GARVIS.Servises
 {
 
     public class Jarvis
     {
+
+        
         private Mem memory = new Mem();
         cshack cshack = new cshack();
         [DllImport("kernel32.dll")]
@@ -85,6 +93,8 @@ namespace GARVIS.Servises
         string currentDirectory = Directory.GetCurrentDirectory();
         SoundPlayer player = new SoundPlayer();
         SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new CultureInfo("ru-RU"));
+
+       
         public Jarvis(string[] commands)
         {
            
@@ -168,7 +178,11 @@ namespace GARVIS.Servises
                         player.SoundLocation = yesfilenames[rnd.Next(yesfilenames.Length)];
                         player.Play();
                         break;
-
+                    case "включи плейлист":
+                        player.SoundLocation = yesfilenames[rnd.Next(yesfilenames.Length)];
+                        player.Play();
+                        PlayPlayList();
+                        break;
                     case "включи суперспособности":
                         player.SoundLocation = okfilenames[rnd.Next(okfilenames.Length)];
                         player.Play();
@@ -362,6 +376,7 @@ namespace GARVIS.Servises
                         Process.Start("chrome.exe", "https://mail.google.com/mail/u/0/#inbox");
                         break;
                     default:
+                        
                         player.SoundLocation = soundFolderPath + "\\sound\\jarvis-og\\not found\\not_found.wav";
                         player.Play();
                         break;
@@ -391,7 +406,7 @@ namespace GARVIS.Servises
                 }
             }
         }
-
+       
         private void ReadCommands ()
         {
             if (File.Exists(actionKeyFilePath))
@@ -466,6 +481,42 @@ namespace GARVIS.Servises
                 Console.Beep(200, 300);
             }
         }
+        private void PlayPlayList()
+        {
+            string playlistFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic) + "\\MyMusik";
+            string[] playlist = Directory.GetFiles(playlistFolder, "*.mp3");
+                    
 
+            if (playlist!=null&& playlist.Length >0)
+            {
+             
+                
+                Process.Start(playlist[rnd.Next(playlist.Length)]);
+                         
+            }
+          
+        }
+        private void PlayFile(String url)
+        {
+            WMPLib.WindowsMediaPlayer   sounder = new WMPLib.WindowsMediaPlayer();
+            sounder.PlayStateChange +=
+                new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(Player_PlayStateChange);
+            sounder.MediaError +=
+                new WMPLib._WMPOCXEvents_MediaErrorEventHandler(Player_MediaError);
+            sounder.URL = url;
+            sounder.controls.play();
+        }
+        private void Player_PlayStateChange(int NewState)
+        {
+            if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                return;
+            }
+        }
+        private void Player_MediaError(object pMediaObject)
+        {
+            MessageBox.Show("Cannot play media file.");
+            return;
+        }
     }
 }

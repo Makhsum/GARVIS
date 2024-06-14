@@ -1,0 +1,15 @@
+C:\Users\dd400\source\repos\GARVIS\AddAction\bin\Debug\AddAction.exe.config
+C:\Users\dd400\source\repos\GARVIS\AddAction\bin\Debug\AddAction.exe
+C:\Users\dd400\source\repos\GARVIS\AddAction\bin\Debug\AddAction.pdb
+C:\Users\dd400\source\repos\GARVIS\AddAction\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dd400\source\repos\GARVIS\AddAction\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.csproj.AssemblyReference.cache
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.Form1.resources
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.Form2.resources
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.Properties.Resources.resources
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.csproj.GenerateResource.cache
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.csproj.CoreCompileInputs.cache
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.csproj.Fody.CopyLocal.cache
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.csproj.CopyComplete
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.exe
+C:\Users\dd400\source\repos\GARVIS\AddAction\obj\Debug\AddAction.pdb
